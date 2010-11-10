@@ -1,0 +1,31 @@
+Python Binding for Ogg Theora and Vorbis Library
+
+How to install
+	cd ogg-theora-vorbis/ogg
+	sudo python setup.py install
+
+	cd ogg-theora-vorbis/theora
+	sudo python setup.py install
+
+	cd ogg-theora-vorbis/vorbis
+	sudo python setup.py install
+
+to test Theora library encode program
+	cd ogg-theora-vorbis/test/theora
+	python theora_test_decode.py
+
+to test Theora library decode program
+	cd ogg-theora-vorbis/test/theora
+	python theora_test_decode.py
+
+to test Vorbis library encode program
+	cd ogg-theora-vorbis/test/vorbis
+	python test_vorbis_encode.py
+
+to test audio and video
+	cd ogg-theora-vorbis/test/audio_video
+	python AudioVideo.py
+
+
+This code is provided under GPL  license
+
