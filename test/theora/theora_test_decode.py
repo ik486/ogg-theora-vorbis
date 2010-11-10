@@ -73,12 +73,12 @@ class IKOgg:
 		return val
 
 	def decodeHeader(self):
+		ret = None
 		while self.isHeader():
 			ret, self.setupInfo_addr = th_decode_headerin(self.theoraInfo, 
 					self.mComment, self.setupInfo_addr, self.packet)
 			val = self.readPacket()
 			if not val: return None
-		return
 		while not ret == 'VIDEO':
 			ret, self.setupInfo_addr = th_decode_headerin(self.theoraInfo, 
 					self.mComment, self.setupInfo_addr, self.packet)
@@ -92,7 +92,6 @@ class IKOgg:
 		self.gpos = 0
 		w, h = self.getSize()
 		self.buff = make_yuv_buffer(w*h*2)
-		th_decode_ctl(self.dec, self.buff, w*h*2)
 		ret, self.gpos = th_decode_packetin(self.dec, self.packet, self.gpos)
 		val = th_decode_ycbcr_out(self.dec, self.buff)
 
